@@ -56,7 +56,7 @@ const SoundCheck = () => {
           </thead>
 
           <tbody>
-            {[...Array(9)].map((_, index) => (
+            {[...Array(9)].map((_, index: number) => (
               <tr key={index}>
                 {/* Serial No */}
                 <td className="border-2 px-4 py-3 text-center font-bold">
