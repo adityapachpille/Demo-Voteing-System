@@ -122,7 +122,7 @@ const SoundCheck = () => {
 </div>
 
       <h1 className="text-center text-xl font-bold mb-4 mt-6">
-        कमळ या निशाणी समोरील बटन दाबून अर्जुन सिंह गौड यांना प्रचंड बहुमतांनी
+      <span className="text-red-600">कमळ</span> या निशाणी समोरील बटन दाबून <span className="text-red-600">अर्जुन सिंह गौड </span> यांना प्रचंड बहुमतांनी
         विजय करा.
       </h1>
 
