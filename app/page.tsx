@@ -42,92 +42,84 @@ const SoundCheck = () => {
         </span>
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="w-full border-2">
-          <thead>
-            <tr className="bg-gray-100">
-              <th className="border-2 px-3 py-2 text-center">क्रमांक</th>
-              <th className="border-2 px-3 py-2 text-center">उमेदवाराचे नाव</th>
-              <th className="border-2 px-3 py-2 text-center">उमेदवार फोटो</th>
-              <th className="border-2 px-3 py-2 text-center">निशाणी</th>
-              <th className="border-2 px-3 py-2 text-center">बत्ती</th>
-              <th className="border-2 px-3 py-2 text-center">मतदान बटन</th>
-            </tr>
-          </thead>
+    
+      <div className="overflow-x-hidden">
+  <table className="w-full border-2 table-fixed">
+    <thead>
+      <tr className="bg-gray-100">
+        <th className="border-2 px-1 py-1 text-center text-xs max-sm:px-0.5">क्रमांक</th>
+        <th className="border-2 px-1 py-1 text-center text-xs max-sm:px-0.5">नाव</th>
+        <th className="border-2 px-1 py-1 text-center text-xs max-sm:px-0.5">फोटो</th>
+        <th className="border-2 px-1 py-1 text-center text-xs max-sm:px-0.5">निशाणी</th>
+        <th className="border-2 px-1 py-1 text-center text-xs max-sm:px-0.5">बत्ती</th>
+        <th className="border-2 px-1 py-1 text-center text-xs max-sm:px-0.5">बटन</th>
+      </tr>
+    </thead>
 
-          <tbody>
-            {[...Array(9)].map((_, index: number) => (
-              <tr key={index}>
-                {/* Serial No */}
-                <td className="border-2 px-4 py-3 text-center font-bold">
-                  {index + 1}
-                </td>
+    <tbody>
+      {[...Array(9)].map((_, index) => (
+        <tr key={index}>
+          {/* Serial */}
+          <td className="border-2 px-1 py-1 text-center text-sm max-sm:text-xs">
+            {index + 1}
+          </td>
 
-                {/* Candidate Name */}
-                <td className="border-2 px-4 py-3 text-center font-bold">
-                  {index === 4 ? "अर्जुन सिंह गौड" : index === 8 ? "नोटा" : ""}
-                </td>
+          {/* Name */}
+          <td className="border-2 px-1 py-1 text-center text-sm max-sm:text-xs">
+            {index === 4 ? "अर्जुन सिंह गौड" : index === 8 ? "नोटा" : ""}
+          </td>
 
-                {/* Photo */}
-                <td className="border-2 px-4 py-2 text-center">
-                  {index === 4 ? (
-                    <img
-                      src="/user.png"
-                      className="w-12 h-12 mx-auto object-cover"
-                      alt="candidate"
-                    />
-                  ) : (
-                    <div className="w-12 h-12 mx-auto" />
-                  )}
-                </td>
+          {/* Photo */}
+          <td className="border-2 px-1 py-1 text-center">
+            {index === 4 ? (
+              <img
+                src="/user.png"
+                className="w-10 h-10 mx-auto object-cover max-sm:w-8 max-sm:h-8"
+              />
+            ) : (
+              <div className="w-10 h-10 mx-auto max-sm:w-8 max-sm:h-8" />
+            )}
+          </td>
 
-                {/* Symbol */}
-                <td className="border-2 px-4 py-3 text-center">
-                  {index === 4 ? (
-                    <img
-                      src="/symbol-bartan.png"
-                      className="w-12 h-12 mx-auto object-contain"
-                      alt="symbol"
-                    />
-                  ) : (
-                    <div className="w-12 h-12 mx-auto" />
-                  )}
-                </td>
+          {/* Symbol */}
+          <td className="border-2 px-1 py-1 text-center">
+            {index === 4 ? (
+              <img
+                src="/symbol-bartan.png"
+                className="w-10 h-10 mx-auto object-contain max-sm:w-8 max-sm:h-8"
+              />
+            ) : (
+              <div className="w-10 h-10 mx-auto max-sm:w-8 max-sm:h-8" />
+            )}
+          </td>
 
-                {/* Bulb */}
-                <td className="border-2 px-4 py-3 text-center">
-                  <div
-                    className={`w-6 h-6 rounded-full mx-auto ${
-                      activeRow === index ? "bg-red-600" : "bg-gray-300"
-                    }`}
-                  ></div>
-                </td>
+          {/* Bulb */}
+          <td className="border-2 px-1 py-1 text-center">
+            <div
+              className={`w-5 h-5 rounded-full mx-auto max-sm:w-4 max-sm:h-4 ${
+                activeRow === index ? "bg-red-600" : "bg-gray-300"
+              }`}
+            ></div>
+          </td>
 
-                {/* Button */}
-                <td className="border-2 px-4 py-3 text-center">
-                  <button
-                    onClick={() =>
-                      index === 4 || index === 8
-                        ? playButtonSound(index)
-                        : playOtherButtonSound(index)
-                    }
-                    className={`w-16 h-8 rounded-full ${
-                      index === 4 ? "bg-green-500" : "bg-blue-700"
-                    }`}
-                    aria-label={
-                      index === 4
-                        ? "Vote for अर्जुन"
-                        : index === 8
-                        ? "Vote for NOTA"
-                        : `Vote for candidate ${index + 1}`
-                    }
-                  />
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+          {/* Button */}
+          <td className="border-2 px-1 py-1 text-center">
+            <button
+              onClick={() =>
+                index === 4 || index === 8
+                  ? playButtonSound(index)
+                  : playOtherButtonSound(index)
+              }
+              className={`h-7 rounded-full max-sm:h-6 ${
+                index === 4 ? "bg-green-500 w-14 max-sm:w-12" : "bg-blue-700 w-14 max-sm:w-12"
+              }`}
+            />
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
 
       <h1 className="text-center text-xl font-bold mb-4 mt-6">
         कमळ या निशाणी समोरील बटन दाबून अर्जुन सिंह गौड यांना प्रचंड बहुमतांनी
