@@ -47,12 +47,12 @@ const SoundCheck = () => {
   <table className="w-full border-2 table-fixed">
     <thead>
       <tr className="bg-gray-100">
-        <th className="border-2 px-1 py-1 text-center text-xs max-sm:px-0.5">क्रमांक</th>
-        <th className="border-2 px-1 py-1 text-center text-xs max-sm:px-0.5">नाव</th>
-        <th className="border-2 px-1 py-1 text-center text-xs max-sm:px-0.5">फोटो</th>
-        <th className="border-2 px-1 py-1 text-center text-xs max-sm:px-0.5">निशाणी</th>
-        <th className="border-2 px-1 py-1 text-center text-xs max-sm:px-0.5">बत्ती</th>
-        <th className="border-2 px-1 py-1 text-center text-xs max-sm:px-0.5">बटन</th>
+        <th className="border-2 px-1 py-1 text-center text-xs font-bold max-sm:px-0.5">क्रमांक</th>
+        <th className="border-2 px-1 py-1 text-center text-xs font-bold max-sm:px-0.5">नाव</th>
+        <th className="border-2 px-1 py-1 text-center text-xs font-bold max-sm:px-0.5">फोटो</th>
+        <th className="border-2 px-1 py-1 text-center text-xs font-bold max-sm:px-0.5">निशाणी</th>
+        <th className="border-2 px-1 py-1 text-center text-xs font-bold max-sm:px-0.5">बत्ती</th>
+        <th className="border-2 px-1 py-1 text-center text-xs font-bold max-sm:px-0.5">बटन</th>
       </tr>
     </thead>
 
@@ -60,12 +60,12 @@ const SoundCheck = () => {
       {[...Array(9)].map((_, index) => (
         <tr key={index}>
           {/* Serial */}
-          <td className="border-2 px-1 py-1 text-center text-sm max-sm:text-xs">
+          <td className="border-2 px-1 py-1 text-center font-bold text-sm max-sm:text-xs">
             {index + 1}
           </td>
 
           {/* Name */}
-          <td className="border-2 px-1 py-1 text-center text-sm max-sm:text-xs">
+          <td className="border-2 px-1 py-1 text-center font-bold text-sm max-sm:text-xs">
             {index === 4 ? "अर्जुन सिंह गौड" : index === 8 ? "नोटा" : ""}
           </td>
 
