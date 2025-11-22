@@ -120,6 +120,20 @@ const SoundCheck = () => {
         </table>
       </div>
 
+      <h1 className="text-center text-xl font-bold mb-4 mt-6">
+      <span className="text-red-600">कमळ</span> या निशाणी समोरील बटन दाबून <span className="text-red-600">अर्जुन सिंह गौड </span> यांना प्रचंड बहुमतांनी
+        विजय करा.
+      </h1>
+
+      <div className="text-center mb-4 pt-2">
+        <span className="bg-yellow-200 text-green-800 font-bold px-4 py-2 inline-block rounded">
+          मतदान - मंगळवार दि. २ डिसेंबर २०२५ रोजी सकाळी ७ ते सायं ६ वाजे पर्यंत.
+        </span>
+      </div>
+
+
+      
+
       <audio ref={buttonSoundRef} src="/sound1.mp3" />
       <audio ref={otherButtonSoundRef} src="/sound2.mp3" />
     </section>
